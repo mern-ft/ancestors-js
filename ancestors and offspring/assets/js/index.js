@@ -1,55 +1,45 @@
-if (char === "m" || char === "M") {
-  switch (num) {
-    case -3:
-      console.log("great grandfather");
-      break;
-    case -2:
-      console.log("grandfather");
-      break;
-    case -1:
-      console.log("father");
-      break;
-    case 0:
-      console.log("me!");
-      break;
-    case 1:
-      console.log("Son");
-      break;
-    case 2:
-      console.log("grandson");
-      break;
-    case 3:
-      console.log("great grandson");
-      break;
+function printRelation(number, gender)
+{
+    let relation;
+    if(gender == 'f' && number > 0)
+    {
+        relation = "daughter"
+    }
+    else if(gender == 'f' && number < 0)
+    {
+        relation = "mother"
+    }
+    else if(gender == 'm' && number > 0)
+    {
+        relation = "son"
+    }
+    else
+    {
+        relation = "father"
+    }
 
-    default:
-      break;
-  }
-} else {
-  switch (num) {
-    case -3:
-      console.log("great grandmother");
-      break;
-    case -2:
-      console.log("grandmother");
-      break;
-    case -1:
-      console.log("mother");
-      break;
-    case 0:
-      console.log("me!");
-      break;
-    case 1:
-      console.log("daughter");
-      break;
-    case 2:
-      console.log("granddaughter");
-      break;
-    case 3:
-      console.log("great granddaughter");
-      break;
+    switch(number)
+    {
+        case -3:
+        case 3:
+            console.log("great grand" + relation);
+            break;
+        case -2:
+        case 2:
+            console.log("grand" + relation);
+            break;
+        case -1:
+        case 1:
+            console.log(relation)
+            break;
+        case 0:
+            console.log("me");
+            break;
+    }
 
-    default:
-      break;
-  }
 }
+
+let number = -3
+let gender = 'm'
+
+printRelation(number, gender)
